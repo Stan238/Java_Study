@@ -22,25 +22,34 @@ public class java_Programm {
          System.out.println(searchWord.equals("fun"));
 
      Scanner keyboard = new Scanner(System.in);
-      try {
-          int age = keyboard.nextInt();
-          
-          System.out.println("You entered: " + age);
 
-          if (age >= 18) {
-              System.out.println("You are an adult.");
-              if(age >=65) {
-                System.out.println("You are allowed to get offer 20% discount");
-              }
-          } else {
-              System.out.println("You are a declined. you are not allowed to buy alcohol.");
-          }
-      } catch (Exception e) {
-          System.out.println("Invalid input. Please enter a valid integer for age.");
-      } finally {
-          keyboard.close();
-      }
 
+     boolean isNumber= false;
+      
+     do {
+            try {
+                
+                int age = keyboard.nextInt();
+                isNumber= false;
+                System.out.println("You entered: " + age);
+
+                if (age >= 18) {
+                    System.out.println("You are an adult.");
+                    if(age >=65) {
+                        System.out.println("You are allowed to get offer 20% discount");
+                    }
+                } else {
+                    System.out.println("You are a declined. you are not allowed to buy alcohol.");
+                }
+                
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid integer for age.");
+                isNumber = true;
+                brake;
+            } finally {
+                keyboard.close();
+            }
+     } while (isNumber);
 
 int x = 2;
 switch (x) {
