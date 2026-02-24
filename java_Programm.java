@@ -25,11 +25,12 @@ public class java_Programm {
 
 
      boolean isNumber= false;
+     int age =0;
       
      do {
             try {
                 
-                int age = keyboard.nextInt();
+                age = keyboard.nextInt();
                 isNumber= false;
                 System.out.println("You entered: " + age);
 
@@ -45,16 +46,18 @@ public class java_Programm {
             } catch (Exception e) {
                 System.out.println("Invalid input. Please enter a valid integer for age.");
                 isNumber = true;
-                brake;
+                e = null;
             } finally {
                 keyboard.close();
             }
+
      } while (isNumber);
 
 int x = 2;
 switch (x) {
     case 2:
         System.out.print("A ");
+        break;
     case 4:
         System.out.print("B ");
     case 12:
