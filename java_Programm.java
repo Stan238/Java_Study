@@ -40,7 +40,22 @@ public class java_Programm {
       } finally {
           keyboard.close();
       }
-    }
 
+
+int x = 2;
+switch (x) {
+    case 2:
+        System.out.print("A ");
+    case 4:
+        System.out.print("B ");
+    case 12:
+        System.out.print("C ");
+    default:
+        System.out.print("D ");
+}
+
+
+
+    }
 
 }
