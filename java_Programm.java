@@ -3,70 +3,43 @@ import java.util.Scanner;
 
 public class java_Programm {
 
+    static String[] ingredients;
 
+    static boolean sandwichReady;
+    
+    public static void gatherIngredients() {
+        ingredients = new String[4];
+        ingredients[0] = "bread";
+        ingredients[1] = "chicken slices";
+        ingredients[2] = "cheese slices";
+        ingredients[3] = "lettuce";
+        System.out.println("All ingredients arranged.");
+    }
+
+    public static void assembleSandwich(){
+
+        if (ingredients.length == 4){
+            if(ingredients[0].equals("bread") &&
+                    ingredients[1].equals("chicken slices") &&
+                    ingredients[2].equals("cheese slices") &&
+                    ingredients[3].equals("lettuce")) {
+                        System.out.println("Assembling the sandwich ...");
+                        sandwichReady = true;
+                    }
+        } else {
+            System.out.println("Ooops! missing required ingredients.");
+        }
+    }
+    public static void serveSandwich(){
+        System.out.println("Serving the sandwich... ");
+    }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!!");
+        gatherIngredients();
 
-       String sentence = "Java programming is fun and educational" ;
-       String searchWord = "fun";
-       boolean containsWord = sentence.contains(searchWord);
-         System.out.println("Does the sentence contain the word '" + searchWord + "'? " + containsWord);
-       String newSentence = sentence.replace("educational", "awesome");
-         System.out.println("Modified sentence: " + newSentence);
-         System.out.println("Length of the original sentence: " + sentence.length());
-        System.out.println((" Cut sentece 17 characters: " + sentence.substring(0,17)));
+        assembleSandwich();
 
-        System.out.println(sentence.toUpperCase());
-         System.out.println(sentence.toLowerCase());
-         System.out.println(searchWord.equals("fun"));
-
-     Scanner keyboard = new Scanner(System.in);
-
-
-     boolean isNumber= false;
-     int age =0;
-      
-     do {
-            try {
-                
-                age = keyboard.nextInt();
-                isNumber= false;
-                System.out.println("You entered: " + age);
-
-                if (age >= 18) {
-                    System.out.println("You are an adult.");
-                    if(age >=65) {
-                        System.out.println("You are allowed to get offer 20% discount");
-                    }
-                } else {
-                    System.out.println("You are a declined. you are not allowed to buy alcohol.");
-                }
-                
-            } catch (Exception e) {
-                System.out.println("Invalid input. Please enter a valid integer for age.");
-                isNumber = true;
-                e = null;
-            } finally {
-                keyboard.close();
-            }
-
-     } while (isNumber);
-
-int x = 2;
-switch (x) {
-    case 2:
-        System.out.print("A ");
-        break;
-    case 4:
-        System.out.print("B ");
-    case 12:
-        System.out.print("C ");
-    default:
-        System.out.print("D ");
-}
-
-
+        serveSandwich();
 
     }
 
